@@ -26,7 +26,7 @@ def trapezoid(h, sup, inf):
       value = value*2
       
     aux = aux+h
-    print(f"f({i}): ", value)
+    print(f"f(x{i}): ", value)
     total_sum = total_sum + value
   print("\n")
   print("Resultado: ", total_sum*multiplier)
