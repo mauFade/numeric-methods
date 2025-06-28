@@ -11,7 +11,27 @@ def integral(x):
   return np.exp(-x**2/2)
 
 def simpson(n, sup, inf):
-  print("simpson")
+  h = (sup - inf)/n
+  aux = inf
+  multiplier = h/3
+  total_sum = 0
+  
+  print("\n")
+  for i in range(n+1):  
+    value = integral(aux)
+    if i != 0:
+      # impar
+      if i % 2 != 0:
+        value = value*4
+      # par
+      else:
+        value = value*2
+      
+    aux = aux+h
+    print(f"f(x{i}): ", value)
+    total_sum = total_sum + value
+  print("\n")
+  print("Resultado: ", total_sum*multiplier)
   
 
 def trapezoid(h, sup, inf):
